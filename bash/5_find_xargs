@@ -1,0 +1,8 @@
+#!/bin/bash
+read -p "Введите значение параметра max_iter/n_estimetors:" max_iter
+read -p "Введите значение параметра test_size:" test_size
+
+find . -type f -iname '*_model.py' -execdir echo {} ';' \
+    | xargs -n1 -I{} python {} $test_size $max_iter  
+
+

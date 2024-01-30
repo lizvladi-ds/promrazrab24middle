@@ -1,0 +1,18 @@
+#!/bin/bash
+read -p "Введите значение параметра C через пробел:" c_param
+read -p "Введите значение параметра penalty через пробел:" penalty_param
+read -p "Введите значение параметра test_size через пробел:" test_size_param
+
+for c in $c_param 
+do
+    for penalty in $penalty_param 
+    do 
+        for test_size in $test_size_param 
+	do
+            python logreg.py $test_size $c $penalty 
+	done
+    done
+done
+
+echo "Выполнение окончено"
+

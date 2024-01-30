@@ -1,0 +1,14 @@
+#!/bin/bash
+#for item in *; do
+for item in `pwd`/*; do
+    if [ -d "$item" ]
+        then
+        echo "$item - это директория"
+   elif [ -f "$item" ]
+        then
+        echo "$item - это файл"
+    fi
+done
+
+message="Конец!"
+echo $message

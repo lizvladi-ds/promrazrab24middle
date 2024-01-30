@@ -1,0 +1,13 @@
+#!/bin/bash
+function train_models {
+    find . -type f -iname '*_model.py' -execdir echo {} ';' \
+    | xargs -n1 -I{} python {} $test_size $max_iter;
+}
+
+read -p "Из какого файла взять параметры? " filename
+
+exec 0< $filename
+while IFS=" " read -r max_iter test_size
+do
+ train_models $test_size $max_iter
+done

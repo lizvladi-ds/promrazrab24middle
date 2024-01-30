@@ -1,0 +1,13 @@
+#!/bin/bash
+echo -e "Начало работы скрипта\n"
+echo "Перечисление моделей с помощью \$*"
+for model in "$*"
+   do 
+      echo "Модель $model"
+   done
+echo ""
+echo "Перечисление моделей с помощью \$@"
+for model in "$@"
+   do
+      echo "Модель $model"
+   done

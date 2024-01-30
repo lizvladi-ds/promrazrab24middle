@@ -1,0 +1,17 @@
+#!/bin/bash
+
+while [ -n "$1" ]; do
+  case "$1" in
+    -a)
+      echo "Введен ключ a";;
+   -f)
+      echo "Введен ключ f";;
+    --)
+      shift
+      break ;;
+    *) echo "Ключа $1 не существует";;
+  esac
+  shift
+done
+
+echo "Введенные параметры $*"
