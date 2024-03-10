@@ -1,0 +1,9 @@
+services:
+  app:
+    build: application
+    ports: 
+      - "5051:5001"
+  bot:
+    build: bot
+    environment:
+      - BOT_TOKEN=
