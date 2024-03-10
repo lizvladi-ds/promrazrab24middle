@@ -1,0 +1,8 @@
+services:
+  jupyter:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./jupyterdata:/home/jovyan/
+    ports:
+      - 9997:8888
