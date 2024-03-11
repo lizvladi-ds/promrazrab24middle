@@ -1,0 +1,6 @@
+boto3
+pandas
+pytest
+sqlalchemy
+sklearn
+numpy
