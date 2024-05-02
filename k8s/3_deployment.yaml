@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jupyter-deployment
+  labels:
+    app.kubernetes.io/name: jupyter2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jupyter2
+  template:
+    metadata:
+      labels:
+        app: jupyter2
+    spec:
+      containers:
+      - name: jupyter2
+        image: jupyter/base-notebook
+        ports:
+        - containerPort: 8888
+
